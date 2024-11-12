@@ -16,7 +16,7 @@ public abstract class TabelaHash {
         int tentativas = 0;
         while (tabela[indice] != null && tentativas < tamanho) {
             colisoes++;
-            indice = (indice + 1) % tamanho;  // Sondagem linear para tratar colisões
+            indice = (indice + 1) % tamanho;
             tentativas++;
         }
         if (tentativas < tamanho) {
@@ -41,7 +41,7 @@ public abstract class TabelaHash {
     }
 }
 
-// Implementação da primeira função hash usando hashCode()
+
 class TabelaHash1 extends TabelaHash {
     public TabelaHash1(int tamanho) {
         super(tamanho);
@@ -53,7 +53,7 @@ class TabelaHash1 extends TabelaHash {
     }
 }
 
-// Implementação da segunda função hash personalizada
+
 class TabelaHash2 extends TabelaHash {
     public TabelaHash2(int tamanho) {
         super(tamanho);

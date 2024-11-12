@@ -9,8 +9,7 @@ public class TesteHash {
         int tamanhoTabela = 6000;
 
         System.out.println("Iniciando a leitura do arquivo...");
-        List<String> nomes = lerArquivo("female_names.txt");  // Nome do arquivo atualizado
-
+        List<String> nomes = lerArquivo("female_names.txt");
         if (nomes.isEmpty()) {
             System.out.println("Erro: O arquivo está vazio ou não foi lido corretamente.");
             return;
@@ -23,7 +22,6 @@ public class TesteHash {
 
         long tempoInicio, tempoFim;
 
-        // Inserção e testes para TabelaHash1
         System.out.println("Iniciando inserção na TabelaHash1...");
         tempoInicio = System.nanoTime();
         for (String nome : nomes) {
@@ -33,7 +31,7 @@ public class TesteHash {
         System.out.println("TabelaHash1 - Tempo de inserção: " + (tempoFim - tempoInicio) + " ns");
         System.out.println("TabelaHash1 - Número de colisões: " + tabela1.getColisoes());
 
-        // Inserção e testes para TabelaHash2
+
         System.out.println("Iniciando inserção na TabelaHash2...");
         tempoInicio = System.nanoTime();
         for (String nome : nomes) {
@@ -43,7 +41,6 @@ public class TesteHash {
         System.out.println("TabelaHash2 - Tempo de inserção: " + (tempoFim - tempoInicio) + " ns");
         System.out.println("TabelaHash2 - Número de colisões: " + tabela2.getColisoes());
 
-        // Distribuição de chaves para TabelaHash1
         System.out.println("Distribuição de chaves - TabelaHash1:");
         int[] distribuicao1 = tabela1.getDistribuicao();
         for (int i = 0; i < distribuicao1.length; i++) {
@@ -52,7 +49,6 @@ public class TesteHash {
             }
         }
 
-        // Distribuição de chaves para TabelaHash2
         System.out.println("Distribuição de chaves - TabelaHash2:");
         int[] distribuicao2 = tabela2.getDistribuicao();
         for (int i = 0; i < distribuicao2.length; i++) {
